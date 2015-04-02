@@ -12,6 +12,19 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'google-oauth2': {
+          apiKey: '1010598670516-bu5ad396v243qbe1al7ad3cilqhvarm8.apps.googleusercontent.com',
+          redirectUri: 'http://localhost:4200',
+          scope: 'https://mail.google.com/'
+        }
+      }
+    },
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://www.googleapis.com"
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
