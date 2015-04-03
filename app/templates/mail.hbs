@@ -1,0 +1,17 @@
+<h2>Mail</h2>
+<table border="0">
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+{{#each model as |message|}}
+  <tr>
+    <td>{{message.from}}</td>
+    <td>{{message.subject}}</td>
+    <td>{{message.receivedDate}}</td>
+  </tr>
+{{/each}}
+</table>
