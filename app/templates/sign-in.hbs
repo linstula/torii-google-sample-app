@@ -3,7 +3,7 @@
 {{else}}
   {{#if session.isAuthenticated }}
     <p>Welcome {{session.currentUser.name}}
-    <a href="#" {{action 'logout'}}>Logout</a>
+    <a href="#" {{action 'signOutUser'}}>Sign Out</a>
     </p>
   {{else}}
     <a href="#" {{action 'signInWithGoogle'}}>Sign in with Google</a>

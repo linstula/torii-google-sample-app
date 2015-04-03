@@ -15,7 +15,7 @@ module.exports = function(environment) {
     torii: {
       sessionServiceName: 'session',
       providers: {
-        'google-oauth2': {
+        'google-oauth2-bearer': {
           apiKey: '1010598670516-bu5ad396v243qbe1al7ad3cilqhvarm8.apps.googleusercontent.com',
           redirectUri: 'http://localhost:4200',
           scope: 'https://mail.google.com/'

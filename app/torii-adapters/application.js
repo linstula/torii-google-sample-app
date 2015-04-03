@@ -2,7 +2,7 @@ import Ember from 'ember';
 import config from '../config/environment';
 
 export default Ember.Object.extend({
-  _validateToken: function(accessToken, providerName='google-oauth2') {
+  _validateToken: function(accessToken, providerName='google-oauth2-bearer') {
     var requestURL = 'https://www.googleapis.com/oauth2/v1/tokeninfo?' + 'access_token=' + accessToken;
 
     return new Ember.RSVP.Promise(function(resolve, reject){
@@ -40,6 +40,12 @@ export default Ember.Object.extend({
   fetch: function() {
     var accessToken = localStorage.toriiAuthToken;
 
+    if (!accessToken) { return Ember.RSVP.reject(); }
+
     return this._validateToken(accessToken);
+  },
+
+  close: function() {
+    delete localStorage.toriiAuthToken;
   }
 });

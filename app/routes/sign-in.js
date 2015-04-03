@@ -5,8 +5,8 @@ export default Ember.Route.extend({
     signInWithGoogle: function(){
       var session = this.get('session');
 
-      session.fetch('google-oath2')
-        .catch(() => this.get('session').open('google-oauth2'))
+      session.fetch('google-oauth2-bearer')
+        .catch(() => this.get('session').open('google-oauth2-bearer'))
         .then(() => this.transitionTo('mail'));
     }
   }
